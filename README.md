@@ -1,6 +1,18 @@
 # MockTask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+
+The App is based upon the following teachnologires.
+
+- Angular 9
+- Angular Material
+- Bootstrap 4 (Just for grid system)
+- Ngx-translate (for translations)
+- Meterial Themeing 
+
+
+
+​	The Login credentials for the app is email: root@admin.com password: 123456.
 
 ## Development server
 
