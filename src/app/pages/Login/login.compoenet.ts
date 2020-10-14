@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
     this.loading = true;
 
-    if(this.f.email.value != "admin@admin.com" && this.f.password.value != '123456'){
+    if(this.f.email.value == "" && this.f.password.value == ''){
       setTimeout(() => {
         this.error = '<label>Invalid <strong>Eamil</strong> or <strong>Password</strong></label>'
         this.loading = false;
