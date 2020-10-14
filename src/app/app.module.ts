@@ -4,18 +4,20 @@ import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { NavbarComponent, CameraCardComponent } from './components'
-import { HomeComponent, LoginComponent } from './pages'
+import { HomeComponent, LoginComponent, ReportsComponent, SettingsComponent } from './pages'
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UIModule } from './UI';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 
-
+// ngx-tranlations
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
-
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { LayoutComponent } from './Layout/layout.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
@@ -24,13 +26,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 export function translateFactory(translate: TranslateService) {
   return async () => {
-    let lang = localStorage.getItem('lang');
-
-    if(!lang){
-      localStorage.setItem('lang', 'it');
-    }
-    translate.setDefaultLang(lang ? lang : 'it');
-    translate.use(lang ? lang : 'it');
+    translate.setDefaultLang('en');
+    translate.use('en');
     return new Promise(resolve => {
       translate.onLangChange.subscribe(() => {
         resolve();
@@ -42,13 +39,17 @@ export function translateFactory(translate: TranslateService) {
 
 @NgModule({
   declarations: [
+    LayoutComponent,
     AppComponent,
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    CameraCardComponent
+    CameraCardComponent,
+    SettingsComponent,
+    ReportsComponent
   ],
   imports: [
+    FlexLayoutModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

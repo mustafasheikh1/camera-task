@@ -1,3 +1,5 @@
 {
-	"home.header": "Elenco delle Telecamere"
+  "home.header": "Elenco delle Telecamere",
+  "settings.header": "Impostazioni dell'app",
+	"reports.header": "Elenco dei Rapporti"
 }

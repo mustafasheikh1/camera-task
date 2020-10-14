@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
         this.loading = false;
       }, 2000)
     }else{
+      localStorage.setItem('mockUser', JSON.stringify({ email: this.f.email.value }))
       setTimeout(() => this.router.navigate([`/${HOME}`]),3000)
     }
   }

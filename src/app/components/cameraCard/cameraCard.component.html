@@ -1,6 +1,11 @@
 <mat-card class="example-card my-3">
-  <img mat-card-image [src]="img" alt="camera">
+  <img mat-card-image [src]="img" alt="camera" style="height: 10rem;">
   <mat-card-content>
-    <strong [ngClass]="{'text-success': status, 'text-danger': !status}">{{ status ? 'PASS' : 'FAIL'}}</strong>
+    <p>
+      <mat-icon style="position: relative; top: 5px;" [ngClass]="{'text-success': status, 'text-danger': !status}">
+        {{ status ? 'done': 'report_problem' }}
+      </mat-icon>
+      {{ status ? 'PASS' : 'FAIL'}}
+    </p>
   </mat-card-content>
 </mat-card>

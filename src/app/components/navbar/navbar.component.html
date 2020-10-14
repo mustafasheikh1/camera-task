@@ -1,18 +1,71 @@
-<mat-toolbar color="primary">
-  <span>Mock API App</span>
+<!-- <mat-toolbar color="primary">
+  <span>Mock</span>
   <span class="example-spacer"></span>
-  <mat-select style="width: 3rem;" class="mr-4" #langRef [formControl]="lang" (selectionChange)="switchLang(langRef.value)">
-    <mat-option *ngFor="let language of languages" [value]="language">
-      {{language | uppercase}}
-    </mat-option>
-  </mat-select>
-  <mat-slide-toggle [formControl]="toggleTheme">
-    <mat-icon color="primary">
-      brightness_2
-    </mat-icon>
-  </mat-slide-toggle>
+  <span class="mr-3">Admin</span>
+
+
   <button (click)="logout()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>exit_to_app</mat-icon>
   </button>
 </mat-toolbar>
-
+ -->
+<mat-toolbar fxLayout="row" color="primary">
+  <span fxFlex>Mock</span>
+  <button (click)="item.action()" mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop"
+    [fxShow.xs]="item.showOnMobile" [fxShow.sm]="item.showOnTablet">
+    <mat-icon class="mr">{{item.icon}}</mat-icon>
+    {{item.label}}
+  </button>
+  <div [fxShow]="!false" [fxShow.sm]="!true" [fxShow.xs]="!true">
+    <mat-slide-toggle [formControl]="toggleTheme">
+      <mat-icon color="primary">
+        brightness_2
+      </mat-icon>
+    </mat-slide-toggle>
+    <mat-divider></mat-divider>
+  </div>
+  <div [fxShow]="!false" [fxShow.sm]="!true" [fxShow.xs]="!true">
+    <mat-select style="width: 3rem;" #langRef [formControl]="lang" (selectionChange)="switchLang(langRef.value)">
+      <mat-option *ngFor="let language of languages" [value]="language">
+        {{language | uppercase}}
+      </mat-option>
+    </mat-select>
+    <mat-divider></mat-divider>
+  </div>
+  <ng-container>
+    <button mat-icon-button [matMenuTriggerFor]="dropMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #dropMenu="matMenu">
+      <ng-container>
+        <div style="width: 100%;" class="px-3 py-2 " [fxShow]="false" [fxShow.sm]="true" [fxShow.xs]="true">
+          <mat-slide-toggle [formControl]="toggleTheme">
+            <mat-icon color="primary">
+              brightness_2
+            </mat-icon>
+          </mat-slide-toggle>
+          <mat-divider></mat-divider>
+        </div>
+      </ng-container>
+      <ng-container>
+        <div [fxShow]="false" [fxShow.sm]="true" [fxShow.xs]="true">
+          <mat-select style="width: 100%;" class="px-3 py-2 " #langRefSmall [formControl]="lang" (selectionChange)="switchLang(langRefSmall.value)">
+            <mat-option *ngFor="let language of languages" [value]="language">
+              {{language | uppercase}}
+            </mat-option>
+          </mat-select>
+          <mat-divider></mat-divider>
+        </div>
+      </ng-container>
+      <ng-container *ngFor="let item of menuItems">
+        <div [fxShow]="!item.showOnDesktop" [fxShow.sm]="!item.showOnTablet" [fxShow.xs]="!item.showOnMobile">
+          <button (click)="item.action()" mat-menu-item>
+            <mat-icon class="mr">{{item.icon}}</mat-icon>
+            {{item.label}}
+          </button>
+          <mat-divider></mat-divider>
+        </div>
+      </ng-container>
+    </mat-menu>
+  </ng-container>
+</mat-toolbar>

@@ -1,3 +1,5 @@
 {
-	"home.header": "List of Cameras"
+  "home.header": "List of Cameras",
+	"settings.header": "App Settings",
+	"reports.header": "List of Reports"
 }

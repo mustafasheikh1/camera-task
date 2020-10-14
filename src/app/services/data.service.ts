@@ -11,7 +11,6 @@ import { MessageService } from './message.service';
 export class DataService {
 
   private camerasUrl = 'assets/data.json';  // URL to web api
-
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

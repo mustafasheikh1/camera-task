@@ -1,11 +1,10 @@
-<app-navbar></app-navbar>
 <div class="container">
   <div class="text-center my-3">
     <h1>{{'home.header' | translate}}</h1>
   </div>
   <div class="row">
     <div *ngFor="let camera of cameras" class="col-lg-3 col-md-6 col-sm-12 p-3">
-      <cam-card [img]="camera.img" width="100%" height="auto" [status]="camera.status"></cam-card>
+      <cam-card [img]="getRandomImg()" width="100%" height="auto" [status]="camera.status"></cam-card>
     </div>
   </div>
 </div>
