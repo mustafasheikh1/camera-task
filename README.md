@@ -14,6 +14,8 @@ The App is based upon the following teachnologires.
 
 ​	The Login credentials for the app is email: root@admin.com password: 123456.
 
+**Side Note:** Remember to take latest pull.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
