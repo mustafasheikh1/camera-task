@@ -1,6 +1,11 @@
 <mat-toolbar color="primary">
   <span>Mock API App</span>
   <span class="example-spacer"></span>
+  <mat-select style="width: 3rem;" class="mr-4" #langRef [formControl]="lang" (selectionChange)="switchLang(langRef.value)">
+    <mat-option *ngFor="let language of languages" [value]="language">
+      {{language | uppercase}}
+    </mat-option>
+  </mat-select>
   <mat-slide-toggle [formControl]="toggleTheme">
     <mat-icon color="primary">
       brightness_2

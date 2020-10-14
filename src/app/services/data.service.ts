@@ -10,7 +10,7 @@ import { MessageService } from './message.service';
 @Injectable({ providedIn: 'root' })
 export class DataService {
 
-  private camerasUrl = 'api/cameras';  // URL to web api
+  private camerasUrl = 'assets/data.json';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
