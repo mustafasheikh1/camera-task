@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <span>Mock API App</span>
+  <span class="example-spacer"></span>
+  <mat-slide-toggle [formControl]="toggleTheme">
+    <mat-icon color="primary">
+      brightness_2
+    </mat-icon>
+  </mat-slide-toggle>
+  <button (click)="logout()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+

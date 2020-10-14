@@ -1,0 +1,47 @@
+@import "../../../variables.scss";
+
+.login-form {
+	margin: 20vh auto;
+	width: 500px;
+	background-color: $color-light;
+	-webkit-box-shadow: -1px 0px 15px -3px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 0px 15px -3px rgba(0,0,0,0.75);
+	box-shadow: -1px 0px 15px -3px rgba(0,0,0,0.75);
+	border-radius: 1rem;
+}
+
+.badge{
+	width: 100%;
+	background-color: #F8D7DA;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 0.5rem 0rem;
+	border-radius: 0.5rem;
+}
+
+.login-bg{
+	background-color: $color-blue;
+	height: 100vh;
+}
+
+
+button {
+	margin: 1rem 0;
+  display: table-cell;
+	width: 30%;
+	border: 1px solid #fff;
+  outline: none !important;
+
+	&:hover{
+    color: #fff;
+    border: 1px solid $color-blue;
+		background-color: $color-blue;
+	}
+}
+
+
+@media(max-width: $breakpoint-phone){
+	.login-form{
+		width: 100%;
+	}
+}

@@ -1,0 +1,6 @@
+<mat-card class="example-card my-3">
+  <img mat-card-image [src]="img" alt="camera">
+  <mat-card-content>
+    <strong [ngClass]="{'text-success': status, 'text-danger': !status}">{{ status ? 'PASS' : 'FAIL'}}</strong>
+  </mat-card-content>
+</mat-card>
